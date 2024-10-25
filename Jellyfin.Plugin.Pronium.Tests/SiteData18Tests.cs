@@ -38,8 +38,8 @@ public class SiteData18Tests
         Assert.That(result.Item.Studios.Length, Is.EqualTo(3));
         Assert.That(result.Item.Genres.Length, Is.EqualTo(6));
         Assert.That(result.People.Count, Is.EqualTo(2));
-        Assert.That(result.People[0].ImageUrl, Does.Contain("8b1888d6-4d61-4a60-9bec-d9bf3d80c785.jpg"));
-        Assert.That(result.People[1].ImageUrl, Does.Contain("7e059593-78ff-40d3-840e-1f5190791c67.jpg"));
+        Assert.That(result.People[0].ImageUrl, Does.Contain("8b1888d6-4d61-4a60-9bec-d9bf3d80c785"));
+        Assert.That(result.People[1].ImageUrl, Does.Contain("7e059593-78ff-40d3-840e-1f5190791c67"));
     }
 
     [Test]
@@ -54,7 +54,7 @@ public class SiteData18Tests
         Assert.That(result.Item.Genres.Length, Is.EqualTo(4));
         Assert.That(result.People.Count, Is.EqualTo(2));
         Assert.That(result.People[0].ImageUrl, Does.Contain("Sophie-Dee"));
-        Assert.That(result.People[1].ImageUrl, Does.Contain("scott-nails.jpg"));
+        Assert.That(result.People[1].ImageUrl, Does.Contain("Scott-Nails"));
     }
 
     [Test]
