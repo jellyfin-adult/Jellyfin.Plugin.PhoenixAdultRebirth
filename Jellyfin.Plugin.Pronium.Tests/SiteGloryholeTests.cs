@@ -34,7 +34,7 @@ public class SiteGloryholeTests
         Assert.That(result.Item.OriginalTitle, Is.EqualTo("gloryhole - 2015-09-28 - Alena Croft"));
         Assert.That(result.Item.Overview, Is.Not.Empty);
         Assert.That(result.Item.Studios.Length, Is.EqualTo(2));
-        Assert.That(result.Item.Genres.Length, Is.EqualTo(6));
+        Assert.That(result.Item.Genres.Length, Is.EqualTo(7));
         Assert.That(result.People.Count, Is.EqualTo(1));
     }
 

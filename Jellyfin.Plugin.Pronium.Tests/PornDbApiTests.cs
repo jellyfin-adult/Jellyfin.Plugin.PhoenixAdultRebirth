@@ -44,7 +44,7 @@ public class PornDbApiTests
         Assert.That(result.Count, Is.GreaterThan(0));
         var id = result[0].ProviderIds.Values.FirstOrDefault();
         Assert.That(id, Is.Not.Empty);
-        Assert.That(id, Is.EqualTo("48#1#4697054"));
+        Assert.That(id, Is.EqualTo("48#1#5273528"));
     }
 
     [Test]
