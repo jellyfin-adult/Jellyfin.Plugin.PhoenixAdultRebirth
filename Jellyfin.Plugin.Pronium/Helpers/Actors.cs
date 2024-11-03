@@ -11,7 +11,7 @@ using Pronium.Helpers.Utils;
 
 #if __EMBY__
 #else
-using MediaBrowser.Model.Entities;
+using Jellyfin.Data.Enums;
 #endif
 
 namespace Pronium.Helpers
@@ -44,10 +44,7 @@ namespace Pronium.Helpers
 
 #if __EMBY__
 #else
-                if (string.IsNullOrEmpty(newPeople.Type))
-                {
-                    newPeople.Type = PersonType.Actor;
-                }
+                newPeople.Type = PersonKind.Actor;
 #endif
                 if (!newPeoples.Any(o => o.Name == newPeople.Name))
                 {
