@@ -21,11 +21,11 @@ jobs:
         run: MSBuild -t:Restore,Build -p:RestorePackagesConfig=true -property:Configuration=Release
 
       - name: Rename Files
-        run: ren Jellyfin.Plugin.Pronium/bin/Release/net6.0/Pronium.dll Jellyfin.Plugin.Pronium.dll && ren Jellyfin.Plugin.Pronium/bin/Release/net6.0/Pronium.pdb Jellyfin.Plugin.Pronium.pdb
+        run: ren Jellyfin.Plugin.Pronium/bin/Release/net8.0/Pronium.dll Jellyfin.Plugin.Pronium.dll && ren Jellyfin.Plugin.Pronium/bin/Release/net8.0/Pronium.pdb Jellyfin.Plugin.Pronium.pdb
 
       - uses: vimtor/action-zip@v1
         with:
-          files: Jellyfin.Plugin.Pronium/bin/Release/net6.0/Jellyfin.Plugin.Pronium.pdb Jellyfin.Plugin.Pronium/bin/Release/net6.0/Jellyfin.Plugin.Pronium.dll
+          files: Jellyfin.Plugin.Pronium/bin/Release/net8.0/Jellyfin.Plugin.Pronium.pdb Jellyfin.Plugin.Pronium/bin/Release/net8.0/Jellyfin.Plugin.Pronium.dll
           dest: Jellyfin.Plugin.Pronium.zip
 
       - uses: actions/upload-artifact@v4
