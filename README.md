@@ -6,6 +6,8 @@ This metadata provider helps fill Jellyfin/Emby with information for your adult 
 [![Current Release](https://img.shields.io/github/release/jellyfin-adult/Jellyfin.Plugin.Pronium)](https://github.com/jellyfin-adult/Jellyfin.Plugin.Pronium/releases/latest)
 [![Build status](https://img.shields.io/github/actions/workflow/status/jellyfin-adult/Jellyfin.Plugin.Pronium/release.yml)](https://github.com/jellyfin-adult/Jellyfin.Plugin.Pronium/releases/tag/nightly)
 
+![Logo](./logo.png)
+
 ------------
 
 ## Install
