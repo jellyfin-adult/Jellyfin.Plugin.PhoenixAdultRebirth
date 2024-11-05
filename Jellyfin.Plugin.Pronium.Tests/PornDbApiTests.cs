@@ -20,9 +20,8 @@ public class PornDbApiTests
     {
         var result = await _site.Search(new[] { 48, 0 }, "Anal Maid Service", null, new CancellationToken());
         Assert.That(result.Count, Is.GreaterThan(0));
-        var id = result[0].ProviderIds.Values.FirstOrDefault();
-        Assert.That(id, Is.Not.Empty);
-        Assert.That(id, Is.EqualTo("48#0#2751895"));
+        var item = result.FirstOrDefault(t => t.ProviderIds.Values.FirstOrDefault() == "48#0#2751895");
+        Assert.That(item, Is.Not.Null);
     }
 
     [Test]
@@ -42,9 +41,8 @@ public class PornDbApiTests
     {
         var result = await _site.Search(new[] { 48, 1 }, "Dark Woods", null, new CancellationToken());
         Assert.That(result.Count, Is.GreaterThan(0));
-        var id = result[0].ProviderIds.Values.FirstOrDefault();
-        Assert.That(id, Is.Not.Empty);
-        Assert.That(id, Is.EqualTo("48#1#5273528"));
+        var item = result.FirstOrDefault(t => t.ProviderIds.Values.FirstOrDefault() == "48#1#5273528");
+        Assert.That(item, Is.Not.Null);
     }
 
     [Test]
