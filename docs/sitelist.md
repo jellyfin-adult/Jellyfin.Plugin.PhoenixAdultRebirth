@@ -518,7 +518,6 @@ The above is a reference list. Please see [the manualsearch doc](./manualsearch.
   - VR Channel PornPortal
 + #### PropertySex | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
 + #### PureTaboo | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
-+ #### R18 | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)* - **SceneID (in form of JAVID)**
 + #### Reality Kings Network | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
   - 40 Inch Plus
   - 8th Street Latinas
@@ -644,8 +643,6 @@ The above is a reference list. Please see [the manualsearch doc](./manualsearch.
   - WhenGirlsPlay
 + #### Why Not Bi | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
 + #### Wicked | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
-+ #### PornWorld | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
-  - Site search is not very accurate, in case of issues try adding GPXXXX ID to the title of the scene.
 + #### Private | Matching type: *[Enhanced](./manualsearch.md#enhanced-search)*
 
 ## Adding sites to this list
