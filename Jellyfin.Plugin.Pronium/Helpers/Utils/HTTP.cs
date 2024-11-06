@@ -85,7 +85,7 @@ namespace Pronium.Helpers.Utils
         private static HttpClient Http { get; set; }
 
         public static string GetUserAgent()
-            => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36";
+            => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 Edg/129.0.0.0";
 
         public static async Task<HTTPResponse> Request(string url, HttpMethod method, HttpContent param, IDictionary<string, string> headers, IDictionary<string, string> cookies, CancellationToken cancellationToken)
         {
@@ -136,6 +136,9 @@ namespace Pronium.Helpers.Utils
             catch (Exception e)
             {
                 Logger.Error($"Request error: {e.Message}");
+#if DEBUG
+                Console.WriteLine($"Request error: {e.Message}");
+#endif
 
                 await Analytics.Send(
                     new AnalyticsExeption { Request = url, Exception = e, }, cancellationToken).ConfigureAwait(false);
