@@ -760,9 +760,6 @@
     "51": {
       "0": [ "Data18", "https://www.data18.com", "/sys/live.php?key=" ],
     },
-    "52": {
-      "0": [ "PornWorld", "https://pornworld.com", "/search/"],
-    },
     "53": {
       "0": [ "Private", "https://private.com", "/search.php?query=" ],
     },
@@ -819,7 +816,6 @@
     "49": "SiteClips4Sale",
     "50": "SiteManyVids",
     "51": "SiteData18",
-    "52": "SitePornWorld",
     "53": "SitePrivate",
   },
   "Abbrieviations": {
