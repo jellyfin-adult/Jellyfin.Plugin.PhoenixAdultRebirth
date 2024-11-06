@@ -34,13 +34,7 @@ namespace Pronium.Sites
 
             var searchResults = data.SelectNodesSafe("//div[@class='scene-grid-item']");
             Logger.Info($"SiteNaughtyAmerica.Search searchResults: {searchResults.Count}");
-#if DEBUG
-            if (searchResults == null || searchResults.Count == 0)
-            {
-                Console.WriteLine($@"URL: {url}");
-                Console.WriteLine($@"Search results: {data?.InnerHtml ?? "No HTML"}");
-            }
-#endif
+
             foreach (var searchResult in searchResults)
             {
                 var sceneUrl = new Uri(searchResult.SelectSingleNode("./a[@class='contain-img']").Attributes["href"].Value);
