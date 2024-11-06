@@ -29,8 +29,10 @@ namespace Pronium.Sites
             }
 
             var url = Helper.GetSearchSearchURL(siteNum) + searchTitle;
+            Console.WriteLine($@"URL: {url}");
             Logger.Info($"SiteNaughtyAmerica.Search url: {url}");
             var data = await HTML.ElementFromURL(url, cancellationToken).ConfigureAwait(false);
+            Console.WriteLine($@"Data: {data?.ToString() ?? string.Empty}");
 
             var searchResults = data.SelectNodesSafe("//div[@class='scene-grid-item']");
             Logger.Info($"SiteNaughtyAmerica.Search searchResults: {searchResults.Count}");
