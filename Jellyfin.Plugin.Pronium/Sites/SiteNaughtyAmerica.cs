@@ -32,7 +32,7 @@ namespace Pronium.Sites
             Console.WriteLine($@"URL: {url}");
             Logger.Info($"SiteNaughtyAmerica.Search url: {url}");
             var data = await HTML.ElementFromURL(url, cancellationToken).ConfigureAwait(false);
-            Console.WriteLine($@"Data: {data?.ToString() ?? string.Empty}");
+            Console.WriteLine($@"Data: {data?.InnerHtml ?? string.Empty}");
 
             var searchResults = data.SelectNodesSafe("//div[@class='scene-grid-item']");
             Logger.Info($"SiteNaughtyAmerica.Search searchResults: {searchResults.Count}");
