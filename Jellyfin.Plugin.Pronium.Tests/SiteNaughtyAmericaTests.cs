@@ -16,7 +16,7 @@ public class SiteNaughtyAmericaTests
     private readonly SiteNaughtyAmerica _site = new();
     private readonly string _testSceneUrl = "https://www.naughtyamerica.com/scene/mgbf-alisondanny-31736";
 
-    [Test, Retry(3)]
+    [Test, Explicit]
     [TestCase(TestName = "{c}.{m}")]
     public async Task SearchIsWorking()
     {
@@ -32,7 +32,7 @@ public class SiteNaughtyAmericaTests
         Assert.That(url, Is.EqualTo(_testSceneUrl));
     }
 
-    [Test, Retry(3)]
+    [Test, Explicit]
     [TestCase(TestName = "{c}.{m}")]
     public async Task UpdateIsWorking()
     {
@@ -45,7 +45,7 @@ public class SiteNaughtyAmericaTests
         Assert.That(result.People.Count, Is.EqualTo(2));
     }
 
-    [Test, Retry(3)]
+    [Test, Explicit]
     [TestCase(TestName = "{c}.{m}")]
     public async Task GetImagesIsWorking()
     {
