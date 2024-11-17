@@ -137,7 +137,7 @@ namespace Pronium.Providers
             tasks.Add("IAFD", GetFromIafd(name, cancellationToken));
 
             var splitedName = name.Split();
-            switch (Plugin.Instance.Configuration.JAVActorNamingStyle)
+            switch (Plugin.Instance?.Configuration.JAVActorNamingStyle)
             {
                 case JAVActorNamingStyle.JapaneseStyle:
                     if (splitedName.Length > 1)
@@ -266,7 +266,7 @@ namespace Pronium.Providers
             var profSelectedImages = actorData.SelectNodesSafe("//div[@id='profselect']//a");
             foreach (var image in profSelectedImages)
             {
-                var imageUrl = image.Attributes["href"].ToString();
+                var imageUrl = image.Attributes["href"].Value;
                 if (!imageUrl.StartsWith("http", StringComparison.OrdinalIgnoreCase))
                 {
                     imageUrl = "https://www.babepedia.com" + imageUrl;
