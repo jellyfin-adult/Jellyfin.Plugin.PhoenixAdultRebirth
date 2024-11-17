@@ -3,8 +3,8 @@
     <TargetFramework Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Release'">net8.0</TargetFramework>
     <TargetFramework Condition="'$(Configuration)'=='Debug.Emby' or '$(Configuration)'=='Release.Emby'">netstandard2.1</TargetFramework>
     <RootNamespace>Pronium</RootNamespace>
-    <AssemblyVersion>2.1.6.123</AssemblyVersion>
-    <FileVersion>2.1.6.123</FileVersion>
+    <AssemblyVersion>2.1.6.124</AssemblyVersion>
+    <FileVersion>2.1.6.124</FileVersion>
     <SourceRevisionId>build$([System.DateTime]::UtcNow.ToString("yyyy-MM-ddTHH:mm:ss:fffZ"))</SourceRevisionId>
     <Copyright>© Jellyfin Adult</Copyright>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
