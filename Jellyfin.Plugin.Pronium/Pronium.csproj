@@ -37,7 +37,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)'=='Debug' or '$(Configuration)'=='Release'">
-    <PackageReference Include="Jellyfin.Controller" Version="10.10.2"/>
+    <PackageReference Include="Jellyfin.Controller" Version="10.10.3"/>
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0"/>
     <PackageReference Include="SkiaSharp" Version="2.88.9"/>
   </ItemGroup>
