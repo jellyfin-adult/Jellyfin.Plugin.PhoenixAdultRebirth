@@ -9,6 +9,14 @@
         "imageUrl": "https://raw.githubusercontent.com/jellyfin-adult/Jellyfin.Plugin.Pronium/dev/logo.png",
         "versions": [
             {
+                "checksum": "0235f6abcc50b01cd3c8761efc6630d8",
+                "changelog": "Minor improvements, dependencies updates",
+                "targetAbi": "10.8.0.0",
+                "sourceUrl": "https://github.com/jellyfin-adult/Jellyfin.Plugin.Pronium/releases/download/2.1.7.130/Jellyfin.Plugin.Pronium.zip",
+                "timestamp": "2024-12-15T16:24:14Z",
+                "version": "2.1.7.130"
+            },
+            {
                 "checksum": "b4a0c2ef54ca2e6b5818335497a7adc9",
                 "changelog": "Fixed Jellyfin crash due to outdated dependency, other dependencies updates",
                 "targetAbi": "10.8.0.0",
