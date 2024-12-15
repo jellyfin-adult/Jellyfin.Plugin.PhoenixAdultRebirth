@@ -37,7 +37,7 @@ public class SiteAnalMomTests
         Assert.That(result.Item.OriginalTitle, Is.EqualTo("analmom - 2024-02-17 - A Hole Lot of Help From My Tutor"));
         Assert.That(result.Item.Overview, Does.StartWith("Max and Nade aren’t the sharpest tools"));
         Assert.That(result.Item.Studios.Length, Is.EqualTo(2));
-        Assert.That(result.Item.Genres.Length, Is.EqualTo(69));
+        Assert.That(result.Item.Genres.Length, Is.EqualTo(70));
         Assert.That(result.Item.Genres, Does.Contain("Casual Wear"));
         Assert.That(result.People.Count, Is.EqualTo(1));
         Assert.That(result.People.Select(t => t.Name), Does.Contain("Christy Love"));
