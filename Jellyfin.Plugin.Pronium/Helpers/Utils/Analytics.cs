@@ -29,37 +29,35 @@ namespace Pronium.Helpers.Utils
     {
         public static readonly string LogsPath = Path.Combine(Plugin.Instance.DataFolderPath, "logs");
 
-        private static AnalyticsStructure AnalyticsData { get; set; }
-
         public static async Task Send(AnalyticsExeption exception, CancellationToken cancellationToken)
         {
-            AnalyticsData = new AnalyticsStructure
+            if (Plugin.Instance != null && Plugin.Instance.Configuration.EnableDebug)
             {
-                User = new UserStructure
+                var analyticsData = new AnalyticsStructure
                 {
-                    DateTime = DateTime.UtcNow,
-                    ServerPlatform = Consts.PluginInstance,
-                    PluginVersion = Consts.PluginVersion,
-                    Options = Plugin.Instance.Configuration,
-                },
-                Info = new InfoStructure
-                {
-                    Request = exception.Request,
-                    SiteNum = exception.SiteNum != null ? $"{exception.SiteNum[0]}#{exception.SiteNum[1]}" : null,
-                    SiteName = exception.SiteNum != null ? Helper.GetSearchSiteName(exception.SiteNum) : null,
-                    SearchTitle = exception.SearchTitle,
-                    SearchDate = exception.SearchDate.HasValue ? exception.SearchDate.Value.ToString("yyyy-MM-dd") : null,
-                    ProviderName = exception.ProviderName,
-                },
-                Error = new ErrorStructure
-                {
-                    Name = exception.Exception.Message,
-                    Text = exception.Exception.StackTrace,
-                },
-            };
+                    User = new UserStructure
+                    {
+                        DateTime = DateTime.UtcNow,
+                        ServerPlatform = Consts.PluginInstance,
+                        PluginVersion = Consts.PluginVersion,
+                        Options = Plugin.Instance.Configuration,
+                    },
+                    Info = new InfoStructure
+                    {
+                        Request = exception.Request,
+                        SiteNum = exception.SiteNum != null ? $"{exception.SiteNum[0]}#{exception.SiteNum[1]}" : null,
+                        SiteName = exception.SiteNum != null ? Helper.GetSearchSiteName(exception.SiteNum) : null,
+                        SearchTitle = exception.SearchTitle,
+                        SearchDate = exception.SearchDate.HasValue ? exception.SearchDate.Value.ToString("yyyy-MM-dd") : null,
+                        ProviderName = exception.ProviderName,
+                    },
+                    Error = new ErrorStructure
+                    {
+                        Name = exception.Exception.Message,
+                        Text = exception.Exception.StackTrace,
+                    },
+                };
 
-            if (Plugin.Instance.Configuration.EnableDebug)
-            {
                 if (!Directory.Exists(LogsPath))
                 {
                     Logger.Info($"Creating analytics directory \"{LogsPath}\"");
@@ -69,7 +67,7 @@ namespace Pronium.Helpers.Utils
                 var fileName = $"{DateTime.Now.ToString("yyyyMMddHHmmssfffffff")}.json.gz";
                 fileName = Path.Combine(LogsPath, fileName);
 
-                var json = JsonConvert.SerializeObject(AnalyticsData, new JsonSerializerSettings
+                var json = JsonConvert.SerializeObject(analyticsData, new JsonSerializerSettings
                 {
                     NullValueHandling = NullValueHandling.Ignore,
                 });
@@ -83,7 +81,7 @@ namespace Pronium.Helpers.Utils
             }
         }
 
-        public struct AnalyticsStructure
+        private struct AnalyticsStructure
         {
             public UserStructure User { get; set; }
 
@@ -92,7 +90,7 @@ namespace Pronium.Helpers.Utils
             public ErrorStructure Error { get; set; }
         }
 
-        public struct UserStructure
+        private struct UserStructure
         {
             public string UID { get; set; }
 
@@ -105,7 +103,7 @@ namespace Pronium.Helpers.Utils
             public PluginConfiguration Options { get; set; }
         }
 
-        public struct InfoStructure
+        private struct InfoStructure
         {
             public string Request { get; set; }
 
@@ -120,7 +118,7 @@ namespace Pronium.Helpers.Utils
             public string ProviderName { get; set; }
         }
 
-        public struct ErrorStructure
+        private struct ErrorStructure
         {
             public string Name { get; set; }
 
