@@ -14,11 +14,11 @@ public class ActorImageProviderTests
 
     private ActorImageProvider _provider = new();
 
-    [Test, Explicit]
+    [Test]
     [TestCase(TestName = "{c}.{m}")]
     public async Task GetActorPhotosIsWorking()
     {
-        var result = await this._provider.GetActorPhotos("Natasha Starr", new CancellationToken());
+        var result = await this._provider.GetActorPhotos("Scarlet Skies", new CancellationToken());
 
         Assert.That(result.Count, Is.GreaterThanOrEqualTo(5));
     }
