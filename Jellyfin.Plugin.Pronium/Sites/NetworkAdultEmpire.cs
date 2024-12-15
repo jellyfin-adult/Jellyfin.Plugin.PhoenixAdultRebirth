@@ -95,7 +95,7 @@ namespace Pronium.Sites
             result.Item.Name = sceneData.SelectSingleText("//h1/text()");
             result.Item.Overview = sceneData.SelectSingleText("//h4[contains(@class, 'synopsis')]");
             result.Item.OriginalTitle =
-                $"{Helper.GetSitePrefix(siteNum)} - {sceneURL.Split("/").Reverse().Skip(1).First()} {result.Item.Name}";
+                $"{Helper.GetSitePrefix(siteNum)} - {sceneURL.Split("/").Reverse().Skip(2).First()} {result.Item.Name}";
 
             var studioName = sceneData.SelectSingleText("//a[@label='Studio']");
             if (!string.IsNullOrEmpty(studioName))
