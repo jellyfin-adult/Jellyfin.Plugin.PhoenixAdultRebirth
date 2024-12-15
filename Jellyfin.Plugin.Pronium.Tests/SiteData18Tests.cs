@@ -16,7 +16,7 @@ public class SiteData18Tests
     private readonly SiteData18 _site = new();
     private readonly string _testSceneUrl = "https://www.data18.com/scenes/165843";
 
-    [Test]
+    [Test, Explicit("Data18 search is broken")]
     [TestCase(TestName = "{c}.{m}")]
     public async Task SearchIsWorking()
     {
