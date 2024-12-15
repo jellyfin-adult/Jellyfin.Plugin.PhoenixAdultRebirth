@@ -14,7 +14,7 @@ public class ActorImageProviderTests
 
     private ActorImageProvider _provider = new();
 
-    [Test, Explicit]
+    [Test]
     [TestCase(TestName = "{c}.{m}")]
     public async Task GetActorPhotosIsWorking()
     {
