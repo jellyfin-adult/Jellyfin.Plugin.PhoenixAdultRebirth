@@ -347,6 +347,11 @@ namespace Pronium.Helpers
                 Url = url,
                 EnableDefaultUserAgent = false,
                 UserAgent = HTTP.GetUserAgent(),
+                LogRequest = true,
+                LogRequestAsDebug = true,
+                LogResponse = true,
+                LogErrors = true,
+                LogResponseHeaders = true,
             });
         }
 #else
