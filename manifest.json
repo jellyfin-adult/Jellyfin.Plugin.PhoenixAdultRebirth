@@ -9,6 +9,14 @@
         "imageUrl": "https://raw.githubusercontent.com/jellyfin-adult/Jellyfin.Plugin.Pronium/dev/logo.png",
         "versions": [
             {
+                "checksum": "db5979205ecb56e5960dad2167867654",
+                "changelog": "Fixed actors image retrieval",
+                "targetAbi": "10.8.0.0",
+                "sourceUrl": "https://github.com/jellyfin-adult/Jellyfin.Plugin.Pronium/releases/download/2.1.9.138/Jellyfin.Plugin.Pronium.zip",
+                "timestamp": "2024-12-27T23:48:04Z",
+                "version": "2.1.9.138"
+            },
+            {
                 "checksum": "0235f6abcc50b01cd3c8761efc6630d8",
                 "changelog": "Minor improvements, dependencies updates",
                 "targetAbi": "10.8.0.0",
