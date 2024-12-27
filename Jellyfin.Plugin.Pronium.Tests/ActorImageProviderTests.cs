@@ -20,6 +20,6 @@ public class ActorImageProviderTests
     {
         var result = await this._provider.GetActorPhotos("Scarlet Skies", new CancellationToken());
 
-        Assert.That(result.Count, Is.GreaterThanOrEqualTo(5));
+        Assert.That(result.Count, Is.GreaterThanOrEqualTo(30));
     }
 }

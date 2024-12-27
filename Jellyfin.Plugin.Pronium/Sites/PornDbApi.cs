@@ -139,7 +139,8 @@ namespace Pronium.Sites
             {
                 foreach (var actorLink in sceneData["performers"])
                 {
-                    var actor = new PersonInfo { Name = (string)actorLink["name"], ImageUrl = (string)actorLink["image"] };
+                    var imageUrl = actorLink["is_parent"].ToString() == "False" ? actorLink["parent"]["image"].ToString() : actorLink["image"].ToString();
+                    var actor = new PersonInfo { Name = (string)actorLink["name"], ImageUrl = imageUrl };
 
                     result.People.Add(actor);
                 }
@@ -181,7 +182,7 @@ namespace Pronium.Sites
             return result;
         }
 
-        public async Task<JObject> GetDataFromApi(string url, CancellationToken cancellationToken)
+        private async Task<JObject> GetDataFromApi(string url, CancellationToken cancellationToken)
         {
             JObject json = null;
             var headers = new Dictionary<string, string>();
