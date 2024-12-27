@@ -10,7 +10,6 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Providers;
 using MediaBrowser.Model.Entities;
@@ -95,21 +94,6 @@ namespace Pronium.Providers
                 }
             }
 
-            images = await ImageHelper.GetImagesSizeAndValidate(images, cancellationToken).ConfigureAwait(false);
-
-            if (images.Any())
-            {
-                foreach (var img in images)
-                {
-                    if (string.IsNullOrEmpty(img.ProviderName))
-                    {
-                        img.ProviderName = this.Name;
-                    }
-                }
-
-                images = images.OrderByDescending(o => o.Height).ToList();
-            }
-
             return images;
         }
 
@@ -154,7 +138,7 @@ namespace Pronium.Providers
                     imageList.Add(new RemoteImageInfo
                     {
                         ProviderName = "PornDB",
-                        ThumbnailUrl = poster["url"].ToString(),
+                        Url = poster["url"].ToString(),
                     });
                 }
             }
